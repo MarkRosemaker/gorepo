@@ -3,7 +3,7 @@ module github.com/MarkRosemaker/gorepo
 go 1.25.5
 
 require (
-	github.com/MarkRosemaker/ghrepo v0.0.0-20260205080157-e776ae6e45af
+	github.com/MarkRosemaker/ghrepo v0.0.0-20260205095310-e99e6f7c12de
 	github.com/spf13/afero v1.15.0
 	golang.org/x/sync v0.19.0
 )
