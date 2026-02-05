@@ -2,7 +2,7 @@ module github.com/MarkRosemaker/gorepo
 
 go 1.25.5
 
-require github.com/MarkRosemaker/ghrepo v0.0.0-20260204175600-217573ce5818
+require github.com/MarkRosemaker/ghrepo v0.0.0-20260205063358-fff859009825
 
 require (
 	github.com/Masterminds/semver/v3 v3.4.0 // indirect
