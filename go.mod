@@ -2,7 +2,11 @@ module github.com/MarkRosemaker/gorepo
 
 go 1.25.5
 
-require github.com/MarkRosemaker/ghrepo v0.0.0-20260205080157-e776ae6e45af
+require (
+	github.com/MarkRosemaker/ghrepo v0.0.0-20260205080157-e776ae6e45af
+	github.com/spf13/afero v1.15.0
+	golang.org/x/sync v0.19.0
+)
 
 require (
 	github.com/Masterminds/semver/v3 v3.4.0 // indirect
@@ -21,7 +25,6 @@ require (
 	github.com/klauspost/cpuid/v2 v2.3.0 // indirect
 	github.com/pjbgf/sha1cd v0.5.0 // indirect
 	github.com/sergi/go-diff v1.4.0 // indirect
-	github.com/spf13/afero v1.15.0 // indirect
 	golang.org/x/crypto v0.47.0 // indirect
 	golang.org/x/net v0.49.0 // indirect
 	golang.org/x/oauth2 v0.34.0 // indirect

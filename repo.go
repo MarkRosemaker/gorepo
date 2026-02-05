@@ -4,8 +4,11 @@ import (
 	"context"
 	"errors"
 	"io/fs"
+	"path/filepath"
 
 	"github.com/MarkRosemaker/ghrepo"
+	"github.com/spf13/afero"
+	"golang.org/x/sync/errgroup"
 )
 
 // Repository represents a local go repository.
@@ -59,8 +62,40 @@ func (r Repository) GoModVendor(ctx context.Context) error {
 }
 
 func (r Repository) Goimports(ctx context.Context) error {
-	_, err := r.ExecCommand(ctx, "goimports", "-w", ".")
-	return err
+	eg := errgroup.Group{}
+
+	if err := afero.Walk(r, ".", func(path string, info fs.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		// Skip entire vendor directory (and .git, etc. if desired)
+		if info.IsDir() {
+			switch filepath.Base(path) {
+			case "vendor", ".git":
+				return filepath.SkipDir // skips the whole subtree
+			default:
+				return nil
+			}
+		}
+
+		// Only process .go files
+		if filepath.Ext(path) != ".go" {
+			return nil
+		}
+
+		// Run goimports -w on this single file
+		eg.Go(func() error {
+			_, err := r.ExecCommand(ctx, "goimports", "-w", path)
+			return err
+		})
+
+		return nil
+	}); err != nil {
+		return err
+	}
+
+	return eg.Wait()
 }
 
 func (r Repository) Gofumpt(ctx context.Context) error {
