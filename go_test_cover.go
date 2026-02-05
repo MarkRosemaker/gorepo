@@ -9,6 +9,8 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/MarkRosemaker/ghrepo"
 )
 
 var reCover = regexp.MustCompile(`^total:\t+\(statements\)\t+([0-9]+.[0-9])%$`)
@@ -25,6 +27,12 @@ func (r *Repository) GoTestCover(ctx context.Context) (float64, error) {
 		"-v",          // verbose output
 		"-shuffle=on", // shuffle tests
 	); err != nil {
+		const noTestPackagesMsg = "go: warning: \"./...\" matched no packages\nno packages to test"
+		if execErr := (ghrepo.ExecError{}); errors.As(err, &execErr) &&
+			execErr.Out == noTestPackagesMsg {
+			return 0, nil
+		}
+
 		return 0, err
 	}
 
