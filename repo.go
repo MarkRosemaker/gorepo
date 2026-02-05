@@ -114,9 +114,9 @@ func (r Repository) GoFix(ctx context.Context) error {
 // GoVet runs go vet on the repository
 func (r Repository) GoVet(ctx context.Context) error {
 	if _, err := r.ExecCommand(ctx, "go", "vet", "./..."); err != nil {
-		const noTestPackagesMsg = "go: warning: \"./...\" matched no packages\nno packages to vet"
+		const noPackagesMsg = "go: warning: \"./...\" matched no packages\nno packages to vet"
 		if execErr := (ghrepo.ExecError{}); errors.As(err, &execErr) &&
-			execErr.Out == noTestPackagesMsg {
+			execErr.Out == noPackagesMsg {
 			return nil
 		}
 
@@ -127,6 +127,13 @@ func (r Repository) GoVet(ctx context.Context) error {
 }
 
 func (r Repository) GolangCILint(ctx context.Context) error {
-	_, err := r.ExecCommand(ctx, "golangci-lint", "run", "./...")
-	return err
+	if _, err := r.ExecCommand(ctx, "golangci-lint", "run", "./..."); err != nil {
+		const noPackagesMsg = "level=error msg=\"Running error: context loading failed: no go files to analyze: running `go mod tidy` may solve the problem\""
+		if execErr := (ghrepo.ExecError{}); errors.As(err, &execErr) &&
+			execErr.Out == noPackagesMsg {
+			return nil
+		}
+	}
+
+	return nil
 }
