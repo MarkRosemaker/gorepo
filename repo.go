@@ -57,3 +57,41 @@ func (r Repository) GoModVendor(ctx context.Context) error {
 	_, err := r.ExecCommand(ctx, "go", "mod", "vendor")
 	return err
 }
+
+func (r Repository) Goimports(ctx context.Context) error {
+	_, err := r.ExecCommand(ctx, "goimports", "-w", ".")
+	return err
+}
+
+func (r Repository) Gofumpt(ctx context.Context) error {
+	_, err := r.ExecCommand(ctx, "gofumpt", "-extra", "-w", ".")
+	return err
+}
+
+func (r Repository) GoFix(ctx context.Context) error {
+	if _, err := r.ExecCommand(ctx, "go", "fix", "./..."); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// GoVet runs go vet on the repository
+func (r Repository) GoVet(ctx context.Context) error {
+	if _, err := r.ExecCommand(ctx, "go", "vet", "./..."); err != nil {
+		const noTestPackagesMsg = "go: warning: \"./...\" matched no packages\nno packages to vet"
+		if execErr := (ghrepo.ExecError{}); errors.As(err, &execErr) &&
+			execErr.Out == noTestPackagesMsg {
+			return nil
+		}
+
+		return err
+	}
+
+	return nil
+}
+
+func (r Repository) GolangCILint(ctx context.Context) error {
+	_, err := r.ExecCommand(ctx, "golangci-lint", "run", "./...")
+	return err
+}
