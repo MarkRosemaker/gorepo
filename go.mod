@@ -1,6 +1,6 @@
 module github.com/MarkRosemaker/gorepo
 
-go 1.25.5
+go 1.26
 
 require (
 	github.com/MarkRosemaker/ghrepo v0.0.0-20260219015257-ed64f16457ab
