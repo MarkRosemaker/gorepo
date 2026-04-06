@@ -133,6 +133,8 @@ func (r Repository) GolangCILint(ctx context.Context) error {
 			execErr.Out == noPackagesMsg {
 			return nil
 		}
+
+		return err
 	}
 
 	return nil
