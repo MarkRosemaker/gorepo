@@ -39,6 +39,10 @@ func TestGolangCILint_NoPackages(t *testing.T) {
 
 	repo := newTestRepo(t)
 
+	if err := afero.WriteFile(repo, "go.mod", []byte("module example.com/test\n\ngo 1.26\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
 	if err := repo.GolangCILint(context.Background()); err != nil {
 		t.Errorf("unexpected error for repo with no Go files: %v", err)
 	}
