@@ -17,7 +17,7 @@ var reCover = regexp.MustCompile(`^total:\t+\(statements\)\t+([0-9]+.[0-9])%$`)
 
 func (r *Repository) GoTestCover(ctx context.Context) (float64, error) {
 	const coverFile = "cover.out"
-	defer r.Remove(coverFile) // always clean up, even on early errors
+	defer func() { _ = r.Remove(coverFile) }() // always clean up, even on early errors
 
 	// run go test with coverage
 	if _, err := r.ExecCommand(ctx, "go", "test", "./...",
