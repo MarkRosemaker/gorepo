@@ -23,6 +23,7 @@ func newTestRepo(t *testing.T) *Repository {
 		ghrepo.WithBaseDir(t.TempDir()),
 		ghrepo.MakeDirAll,
 		ghrepo.InitGit,
+		ghrepo.CreateRemote,
 	)
 	if err != nil {
 		t.Fatal(err)
