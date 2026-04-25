@@ -14,6 +14,7 @@ import (
 	"github.com/go-git/go-git/v6"
 	"github.com/go-git/go-git/v6/config"
 	"github.com/go-git/go-git/v6/plumbing"
+	"github.com/go-git/go-git/v6/plumbing/client"
 	githttp "github.com/go-git/go-git/v6/plumbing/transport/http"
 	"github.com/google/go-github/v80/github"
 	"github.com/spf13/afero"
@@ -25,7 +26,7 @@ const maxPerPage = 100
 type Service struct {
 	githubToken string
 	github      *github.Client
-	gitAuth     *githttp.BasicAuth
+	gitOpts     []client.Option
 	opts        []Option
 
 	mu    sync.Mutex
@@ -37,11 +38,13 @@ func NewService(ctx context.Context, githubToken string, opts ...Option) *Servic
 		githubToken: githubToken,
 		github: github.NewClient(oauth2.NewClient(ctx, oauth2.StaticTokenSource(
 			&oauth2.Token{AccessToken: githubToken}))),
-		gitAuth: &githttp.BasicAuth{
-			// Can be anything non-empty for token auth
-			Username: "git",
-			// Recommended: GitHub PAT (not raw password)
-			Password: githubToken,
+		gitOpts: []client.Option{
+			client.WithHTTPAuth(&githttp.BasicAuth{
+				// Can be anything non-empty for token auth
+				Username: "git",
+				// Recommended: GitHub PAT (not raw password)
+				Password: githubToken,
+			}),
 		},
 		opts:  opts,
 		repos: map[string]map[string]*github.Repository{},
@@ -81,6 +84,13 @@ func (s *Service) NewRepository(ctx context.Context, owner, name string, opts ..
 	if err != nil {
 		if !cfg.initGit || !errors.Is(err, git.ErrRepositoryNotExists) {
 			return nil, fmt.Errorf("failed to open git repo at %s: %w", path, err)
+		}
+
+		initOpts := globalInitOpts
+		if defaultBranch := r.github.GetDefaultBranch(); defaultBranch != "" {
+			initOpts = append(initOpts, git.WithDefaultBranch(
+				plumbing.NewBranchReferenceName(defaultBranch),
+			))
 		}
 
 		r.gitrepo, err = git.PlainInit(path, false, initOpts...)
