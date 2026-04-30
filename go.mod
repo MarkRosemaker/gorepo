@@ -3,14 +3,14 @@ module github.com/MarkRosemaker/gorepo
 go 1.26
 
 require (
-	github.com/MarkRosemaker/ghrepo v0.0.0-20260426012258-5bd8a4866951
+	github.com/MarkRosemaker/ghrepo v0.0.0-20260430160151-d4dd41547a90
 	github.com/google/go-github/v80 v80.0.0
 	github.com/spf13/afero v1.15.0
 	golang.org/x/sync v0.20.0
 )
 
 require (
-	github.com/Masterminds/semver/v3 v3.4.0 // indirect
+	github.com/Masterminds/semver/v3 v3.5.0 // indirect
 	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/ProtonMail/go-crypto v1.4.1 // indirect
 	github.com/cloudflare/circl v1.6.3 // indirect
