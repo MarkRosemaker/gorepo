@@ -20,7 +20,8 @@ func (r *Repository) GoTestCover(ctx context.Context) (float64, error) {
 	defer func() { _ = r.Remove(coverFile) }() // always clean up, even on early errors
 
 	// run go test with coverage
-	if _, err := r.ExecCommand(ctx, "go", "test", "./...",
+	if _, err := r.ExecCommand(
+		ctx, "go", "test", "./...",
 		"-race", // enable race detection
 		// enable coverage and write to cover.out
 		"-cover", "-covermode=atomic", "-coverprofile="+coverFile,

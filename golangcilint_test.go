@@ -15,7 +15,8 @@ func newTestRepo(t *testing.T) *Repository {
 
 	ctx := context.Background()
 	svc := ghrepo.NewService(ctx, "")
-	repo, err := svc.NewRepository(ctx, "test", "test",
+	repo, err := svc.NewRepository(
+		ctx, "test", "test",
 		ghrepo.WithGithubRepo(&github.Repository{
 			Name:  new("test"),
 			Owner: &github.User{Login: new("test")},
