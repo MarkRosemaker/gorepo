@@ -45,7 +45,7 @@ func (r Repository) UpdateDependencies(ctx context.Context) error {
 
 // GoGetAll updates all dependencies in the repository.
 func (r Repository) GoGetAll(ctx context.Context) error {
-	_, err := r.ExecCommand(ctx, "go", "get", "-u", "all")
+	_, err := r.ExecCommand(ctx, "go", "get", "-u", "-t", "all")
 	return err
 }
 
