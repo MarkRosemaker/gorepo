@@ -5,6 +5,7 @@ go 1.26
 require (
 	github.com/MarkRosemaker/ghrepo v0.0.0-20260219015257-ed64f16457ab
 	github.com/spf13/afero v1.15.0
+	golang.org/x/mod v0.36.0
 	golang.org/x/sync v0.19.0
 )
 
