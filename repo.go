@@ -139,3 +139,8 @@ func (r Repository) GolangCILint(ctx context.Context) error {
 
 	return nil
 }
+
+func (r Repository) GoGenerate(ctx context.Context) error {
+	_, err := r.ExecCommand(ctx, "go", "generate", "./...")
+	return err
+}
