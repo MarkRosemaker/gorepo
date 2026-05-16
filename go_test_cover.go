@@ -25,7 +25,6 @@ func (r *Repository) GoTestCover(ctx context.Context) (float64, error) {
 		"-race", // enable race detection
 		// enable coverage and write to cover.out
 		"-cover", "-covermode=atomic", "-coverprofile="+coverFile,
-		"-v",          // verbose output
 		"-shuffle=on", // shuffle tests
 	); err != nil {
 		const noTestPackagesMsg = "go: warning: \"./...\" matched no packages\nno packages to test"
