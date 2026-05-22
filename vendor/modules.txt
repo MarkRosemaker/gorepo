@@ -1,4 +1,4 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20260521220249-e580b3b51dc9
+# github.com/MarkRosemaker/ghrepo v0.0.0-20260522040150-2d0680ac2cde
 ## explicit; go 1.25.5
 github.com/MarkRosemaker/ghrepo
 # github.com/Masterminds/semver/v3 v3.5.0
@@ -156,7 +156,7 @@ github.com/sergi/go-diff/diffmatchpatch
 github.com/spf13/afero
 github.com/spf13/afero/internal/common
 github.com/spf13/afero/mem
-# golang.org/x/crypto v0.51.0
+# golang.org/x/crypto v0.52.0
 ## explicit; go 1.25.0
 golang.org/x/crypto/argon2
 golang.org/x/crypto/blake2b
@@ -174,7 +174,7 @@ golang.org/x/crypto/ssh
 golang.org/x/crypto/ssh/agent
 golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
 golang.org/x/crypto/ssh/knownhosts
-# golang.org/x/net v0.54.0
+# golang.org/x/net v0.55.0
 ## explicit; go 1.25.0
 golang.org/x/net/internal/socks
 golang.org/x/net/proxy
