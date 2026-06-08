@@ -1,4 +1,4 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20260608160216-6c1a9bddf887
+# github.com/MarkRosemaker/ghrepo v0.0.0-20260608220333-cc608973d81b
 ## explicit; go 1.25.5
 github.com/MarkRosemaker/ghrepo
 # github.com/Masterminds/semver/v3 v3.5.0
@@ -156,7 +156,7 @@ github.com/sergi/go-diff/diffmatchpatch
 github.com/spf13/afero
 github.com/spf13/afero/internal/common
 github.com/spf13/afero/mem
-# golang.org/x/crypto v0.52.0
+# golang.org/x/crypto v0.53.0
 ## explicit; go 1.25.0
 golang.org/x/crypto/argon2
 golang.org/x/crypto/blake2b
