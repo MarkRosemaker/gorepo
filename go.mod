@@ -3,10 +3,10 @@ module github.com/MarkRosemaker/gorepo
 go 1.26
 
 require (
-	github.com/MarkRosemaker/ghrepo v0.0.0-20260706160147-4583e1d3380a
+	github.com/MarkRosemaker/ghrepo v0.0.0-20260708160345-bfc9a71092b0
 	github.com/google/go-github/v80 v80.0.0
 	github.com/spf13/afero v1.15.0
-	golang.org/x/sync v0.21.0
+	golang.org/x/sync v0.22.0
 )
 
 require (
@@ -26,6 +26,6 @@ require (
 	golang.org/x/crypto v0.53.0 // indirect
 	golang.org/x/net v0.56.0 // indirect
 	golang.org/x/oauth2 v0.36.0 // indirect
-	golang.org/x/sys v0.46.0 // indirect
+	golang.org/x/sys v0.47.0 // indirect
 	golang.org/x/text v0.39.0 // indirect
 )

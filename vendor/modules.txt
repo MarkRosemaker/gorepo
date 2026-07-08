@@ -1,4 +1,4 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20260706160147-4583e1d3380a
+# github.com/MarkRosemaker/ghrepo v0.0.0-20260708160345-bfc9a71092b0
 ## explicit; go 1.25.5
 github.com/MarkRosemaker/ghrepo
 # github.com/Masterminds/semver/v3 v3.5.0
@@ -182,10 +182,10 @@ golang.org/x/net/proxy
 ## explicit; go 1.25.0
 golang.org/x/oauth2
 golang.org/x/oauth2/internal
-# golang.org/x/sync v0.21.0
+# golang.org/x/sync v0.22.0
 ## explicit; go 1.25.0
 golang.org/x/sync/errgroup
-# golang.org/x/sys v0.46.0
+# golang.org/x/sys v0.47.0
 ## explicit; go 1.25.0
 golang.org/x/sys/cpu
 golang.org/x/sys/unix
