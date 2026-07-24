@@ -1,4 +1,4 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20260708220220-2c3a154e03a6
+# github.com/MarkRosemaker/ghrepo v0.0.0-20260724100206-bfee2ceeb9cb
 ## explicit; go 1.25.5
 github.com/MarkRosemaker/ghrepo
 # github.com/Masterminds/semver/v3 v3.5.0
@@ -63,7 +63,7 @@ github.com/go-git/gcfg/v2
 github.com/go-git/gcfg/v2/scanner
 github.com/go-git/gcfg/v2/token
 github.com/go-git/gcfg/v2/types
-# github.com/go-git/go-billy/v6 v6.0.0-alpha.1
+# github.com/go-git/go-billy/v6 v6.0.0-alpha.2
 ## explicit; go 1.25.0
 github.com/go-git/go-billy/v6
 github.com/go-git/go-billy/v6/helper/chroot
