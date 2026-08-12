@@ -3,10 +3,12 @@ package gorepo
 import (
 	"context"
 	"errors"
+	"io"
 	"os"
 
 	"github.com/MarkRosemaker/ghrepo"
 	"github.com/golangci/golangci-lint/v2/pkg/config"
+	"github.com/mitchellh/mapstructure"
 	"gopkg.in/yaml.v3"
 )
 
@@ -29,24 +31,19 @@ func (r Repository) golangCILint(ctx context.Context, fix bool, linters *config.
 	}
 
 	if linters != nil {
-		data, err := yaml.Marshal(&config.Config{
-			Version: "2",
-			Linters: *linters,
-		})
-		if err != nil {
-			return err
-		}
-
 		tmp, err := os.CreateTemp("", "golangci-*.yml")
 		if err != nil {
 			return err
 		}
 		defer os.Remove(tmp.Name())
 
-		if _, err := tmp.Write(data); err != nil {
+		if err := marshalYAML(tmp, &config.Config{
+			Version: "2",
+			Linters: *linters,
+		}); err != nil {
 			return err
 		}
-		tmp.Close()
+		defer tmp.Close()
 
 		args = append(args, "-c", tmp.Name())
 	}
@@ -62,4 +59,40 @@ func (r Repository) golangCILint(ctx context.Context, fix bool, linters *config.
 	}
 
 	return nil
+}
+
+func marshalYAML(w io.Writer, cfg *config.Config) error {
+	m, err := structToMap(cfg)
+	if err != nil {
+		return err
+	}
+
+	data, err := yaml.Marshal(m)
+	if err != nil {
+		return err
+	}
+
+	_, err = w.Write(data)
+	return err
+}
+
+func structToMap(v any) (map[string]any, error) {
+	result := map[string]any{}
+
+	decoder, err := mapstructure.NewDecoder(&mapstructure.DecoderConfig{
+		TagName: "mapstructure",
+		Result:  &result,
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	if err := decoder.Decode(v); err != nil {
+		return nil, err
+	}
+
+	// mapstructure Decode puts into Result, but for nested structs
+	// we need recursive cleanup of zero values / proper nesting.
+	// Simpler alternative below if this is flaky.
+	return result, nil
 }

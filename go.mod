@@ -6,6 +6,7 @@ require (
 	github.com/MarkRosemaker/ghrepo v0.0.0-20260811220213-2660131c9290
 	github.com/golangci/golangci-lint/v2 v2.12.2
 	github.com/google/go-github/v80 v80.0.0
+	github.com/mitchellh/mapstructure v1.5.0
 	github.com/spf13/afero v1.15.0
 	golang.org/x/sync v0.22.0
 	gopkg.in/yaml.v3 v3.0.1
@@ -34,7 +35,6 @@ require (
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
-	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.3.1 // indirect
 	github.com/pjbgf/sha1cd v0.6.0 // indirect
