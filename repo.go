@@ -43,9 +43,12 @@ func (r Repository) UpdateDependencies(ctx context.Context) error {
 	return r.GoModVendor(ctx)
 }
 
-// GoGetAll updates all dependencies in the repository.
+// GoGetAll updates all dependencies reachable from the module.
 func (r Repository) GoGetAll(ctx context.Context) error {
-	_, err := r.ExecCommand(ctx, "go", "get", "-u", "all")
+	// NOTE:
+	// 	./... = only packages reachable from the module + their real dependencies
+	// all = every module ever mentioned in the build list, including ones that only exist for old versions
+	_, err := r.ExecCommand(ctx, "go", "get", "-u", "./...")
 	return err
 }
 
