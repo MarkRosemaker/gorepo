@@ -7,8 +7,8 @@ import (
 	"os"
 
 	"github.com/MarkRosemaker/ghrepo"
+	"github.com/go-viper/mapstructure/v2"
 	"github.com/golangci/golangci-lint/v2/pkg/config"
-	"github.com/mitchellh/mapstructure"
 	"gopkg.in/yaml.v3"
 )
 
@@ -67,21 +67,19 @@ func marshalYAML(w io.Writer, cfg *config.Config) error {
 		return err
 	}
 
-	data, err := yaml.Marshal(m)
-	if err != nil {
+	if err := yaml.NewEncoder(w).Encode(m); err != nil {
 		return err
 	}
 
-	_, err = w.Write(data)
-	return err
+	return nil
 }
 
 func structToMap(v any) (map[string]any, error) {
-	result := map[string]any{}
+	m := map[string]any{}
 
 	decoder, err := mapstructure.NewDecoder(&mapstructure.DecoderConfig{
 		TagName: "mapstructure",
-		Result:  &result,
+		Result:  &m,
 	})
 	if err != nil {
 		return nil, err
@@ -91,8 +89,5 @@ func structToMap(v any) (map[string]any, error) {
 		return nil, err
 	}
 
-	// mapstructure Decode puts into Result, but for nested structs
-	// we need recursive cleanup of zero values / proper nesting.
-	// Simpler alternative below if this is flaky.
-	return result, nil
+	return m, nil
 }
