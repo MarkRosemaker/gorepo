@@ -30,10 +30,10 @@ func TestLintersYAMLMarshal(t *testing.T) {
 		t.Fatalf("marshal: %v", err)
 	}
 
-	out := w.String()
+	got := w.String()
 
 	// expected kebab-case keys from mapstructure tags
-	want := []string{
+	for _, want := range []string{
 		"version: \"2\"",
 		"default: none",
 		"enable:",
@@ -44,11 +44,9 @@ func TestLintersYAMLMarshal(t *testing.T) {
 		"os-temp-dir: true",
 		"os-chdir: true",
 		"context-background: true",
-	}
-
-	for _, k := range want {
-		if !strings.Contains(out, k) {
-			t.Errorf("missing key/value %q in:\n%s", k, out)
+	} {
+		if !strings.Contains(got, want) {
+			t.Errorf("missing key/value %q in:\n%s", want, got)
 		}
 	}
 }
