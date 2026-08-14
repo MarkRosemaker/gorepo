@@ -35,7 +35,7 @@ func (r Repository) golangCILint(ctx context.Context, fix bool, linters *config.
 		if err != nil {
 			return err
 		}
-		defer os.Remove(tmp.Name())
+		defer os.Remove(tmp.Name()) //nolint:errcheck
 
 		if err := marshalYAML(tmp, &config.Config{
 			Version: "2",
@@ -43,7 +43,7 @@ func (r Repository) golangCILint(ctx context.Context, fix bool, linters *config.
 		}); err != nil {
 			return err
 		}
-		defer tmp.Close()
+		defer tmp.Close() //nolint:errcheck
 
 		args = append(args, "-c", tmp.Name())
 	}
