@@ -52,6 +52,19 @@ func (r Repository) GoGetAll(ctx context.Context) error {
 	return err
 }
 
+// UpdateTools updates all go tools in the repository.
+func (r Repository) UpdateTools(ctx context.Context) error {
+	if err := r.GoGetAll(ctx); err != nil {
+		return err
+	}
+
+	if err := r.GoModTidy(ctx); err != nil {
+		return err
+	}
+
+	return r.GoModVendor(ctx)
+}
+
 // GoGetTools updates all tool dependencies listed in go.mod.
 func (r Repository) GoGetTools(ctx context.Context) error {
 	_, err := r.ExecCommand(ctx, "go", "get", "-u", "tool")
