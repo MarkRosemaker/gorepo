@@ -20,8 +20,8 @@ func TestService_NewRepository(t *testing.T) {
 	svc := NewService(ctx, "")
 	repo, err := svc.NewRepository(ctx, "test", "test",
 		ghrepo.WithGithubRepo(&github.Repository{
-			Name:  github.String("test"),
-			Owner: &github.User{Login: github.String("test")},
+			Name:  github.Ptr("test"),
+			Owner: &github.User{Login: github.Ptr("test")},
 		}),
 		ghrepo.WithBaseDir(t.TempDir()),
 		ghrepo.MakeDirAll,
