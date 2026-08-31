@@ -54,7 +54,7 @@ func (r Repository) GoGetAll(ctx context.Context) error {
 
 // UpdateTools updates all go tools in the repository.
 func (r Repository) UpdateTools(ctx context.Context) error {
-	if err := r.GoGetAll(ctx); err != nil {
+	if err := r.GoGetTools(ctx); err != nil {
 		return err
 	}
 
