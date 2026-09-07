@@ -1,7 +1,6 @@
 package gorepo
 
 import (
-	"context"
 	"testing"
 
 	"github.com/MarkRosemaker/ghrepo"
@@ -9,14 +8,14 @@ import (
 )
 
 func TestNewService(t *testing.T) {
-	svc := NewService(context.Background(), "")
+	svc := NewService(t.Context(), "")
 	if svc == nil {
 		t.Fatal("NewService returned nil")
 	}
 }
 
 func TestService_NewRepository(t *testing.T) {
-	ctx := context.Background()
+	ctx := t.Context()
 	svc := NewService(ctx, "")
 	repo, err := svc.NewRepository(ctx, "test", "test",
 		ghrepo.WithGithubRepo(&github.Repository{

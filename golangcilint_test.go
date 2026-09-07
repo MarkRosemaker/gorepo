@@ -1,7 +1,6 @@
 package gorepo
 
 import (
-	"context"
 	"os/exec"
 	"testing"
 
@@ -13,7 +12,7 @@ import (
 func newTestRepo(t *testing.T) *Repository {
 	t.Helper()
 
-	ctx := context.Background()
+	ctx := t.Context()
 	svc := ghrepo.NewService(ctx, "")
 	repo, err := svc.NewRepository(
 		ctx, "test", "test",
@@ -44,7 +43,7 @@ func TestGolangCILint_NoPackages(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if err := repo.GolangCILint(context.Background()); err != nil {
+	if err := repo.GolangCILint(t.Context()); err != nil {
 		t.Errorf("unexpected error for repo with no Go files: %v", err)
 	}
 }
@@ -65,7 +64,7 @@ func TestGolangCILint_PropagatesError(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if err := repo.GolangCILint(context.Background()); err == nil {
+	if err := repo.GolangCILint(t.Context()); err == nil {
 		t.Error("expected error for repo with lint violations, got nil")
 	}
 }

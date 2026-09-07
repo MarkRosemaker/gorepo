@@ -1,7 +1,6 @@
 package gorepo
 
 import (
-	"context"
 	"testing"
 
 	"github.com/spf13/afero"
@@ -36,7 +35,7 @@ func TestGoVet_NoPackages(t *testing.T) {
 	if err := afero.WriteFile(repo, "go.mod", []byte("module example.com/test\n\ngo 1.26\n"), 0o644); err != nil {
 		t.Fatal(err)
 	}
-	if err := repo.GoVet(context.Background()); err != nil {
+	if err := repo.GoVet(t.Context()); err != nil {
 		t.Errorf("unexpected error for repo with no Go files: %v", err)
 	}
 }
