@@ -17,6 +17,7 @@ func TestNewService(t *testing.T) {
 func TestService_NewRepository(t *testing.T) {
 	ctx := t.Context()
 	svc := NewService(ctx, "")
+
 	repo, err := svc.NewRepository(ctx, "test", "test",
 		ghrepo.WithGithubRepo(&github.Repository{
 			Name:  new("test"),
@@ -30,6 +31,7 @@ func TestService_NewRepository(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	if repo == nil {
 		t.Fatal("NewRepository returned nil")
 	}

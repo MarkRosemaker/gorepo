@@ -13,6 +13,7 @@ func TestIsGoRepo(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	if ok {
 		t.Error("expected false without go.mod")
 	}
@@ -25,6 +26,7 @@ func TestIsGoRepo(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	if !ok {
 		t.Error("expected true with go.mod")
 	}
@@ -35,6 +37,7 @@ func TestGoVet_NoPackages(t *testing.T) {
 	if err := afero.WriteFile(repo, "go.mod", []byte("module example.com/test\n\ngo 1.26\n"), 0o644); err != nil {
 		t.Fatal(err)
 	}
+
 	if err := repo.GoVet(t.Context()); err != nil {
 		t.Errorf("unexpected error for repo with no Go files: %v", err)
 	}

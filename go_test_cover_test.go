@@ -36,6 +36,7 @@ func TestGetTotalLine(t *testing.T) {
 			if (err != nil) != tt.wantErr {
 				t.Fatalf("getTotalLine() error = %v, wantErr %v", err, tt.wantErr)
 			}
+
 			if got != tt.want {
 				t.Errorf("getTotalLine() = %q, want %q", got, tt.want)
 			}
