@@ -1,4 +1,4 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20260919112334-85ac6f802e36
+# github.com/MarkRosemaker/ghrepo v0.0.0-20260919132616-b6a3e85d7506
 ## explicit; go 1.26.0
 github.com/MarkRosemaker/ghrepo
 # github.com/Masterminds/semver/v3 v3.5.0
