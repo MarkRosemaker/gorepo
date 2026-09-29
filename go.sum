@@ -1,5 +1,5 @@
-github.com/MarkRosemaker/ghrepo v0.0.0-20260928160254-4ace7c0de77c h1:uGkAubuBl57BGgbj14igI1mzvg2tUmUDJJR8BjrQ00U=
-github.com/MarkRosemaker/ghrepo v0.0.0-20260928160254-4ace7c0de77c/go.mod h1:uNLZnWu4ca0oRhiYddar8acsM7GhVEBIitMZTvgFJmw=
+github.com/MarkRosemaker/ghrepo v0.0.0-20260929233343-123c7f7ce804 h1:bRayIuq6EJC/nLieTkRqc0tKrsZgKwIrNmZjCUzJqmQ=
+github.com/MarkRosemaker/ghrepo v0.0.0-20260929233343-123c7f7ce804/go.mod h1:uNLZnWu4ca0oRhiYddar8acsM7GhVEBIitMZTvgFJmw=
 github.com/Masterminds/semver/v3 v3.5.0 h1:kQceYJfbupGfZOKZQg0kou0DgAKhzDg2NZPAwZ/2OOE=
 github.com/Masterminds/semver/v3 v3.5.0/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
 github.com/Microsoft/go-winio v0.6.2 h1:F2VQgta7ecxGYO8k3ZZz3RS8fVIXVxONVUPlNERoyfY=
