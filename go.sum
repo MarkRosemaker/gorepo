@@ -1,5 +1,5 @@
-github.com/MarkRosemaker/ghrepo v0.0.0-20261004011221-c377b54f9305 h1:GiUnuqu0aBuTWahManhBdINPsgXqc4beLQT83o5Lyu8=
-github.com/MarkRosemaker/ghrepo v0.0.0-20261004011221-c377b54f9305/go.mod h1:krl1v4LKplCD54wSCZ9ej0Q859hsCk47vvx54vi+mHM=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261004160115-b16501f1f603 h1:7gVgAuyFurRRuSh9pH0wUhavCGxboBRvEV/2prBD4DA=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261004160115-b16501f1f603/go.mod h1:EIpuQ5YbgK+D2RP1NleaLDpNZ+0huNXdUuP+PAa9Zp0=
 github.com/Masterminds/semver/v3 v3.5.0 h1:kQceYJfbupGfZOKZQg0kou0DgAKhzDg2NZPAwZ/2OOE=
 github.com/Masterminds/semver/v3 v3.5.0/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
 github.com/Microsoft/go-winio v0.6.2 h1:F2VQgta7ecxGYO8k3ZZz3RS8fVIXVxONVUPlNERoyfY=
@@ -30,8 +30,8 @@ github.com/go-git/go-billy/v6 v6.0.0-beta.1 h1:OJ4r207zcEbeq/DJNajQUOMd+pph3r9A7
 github.com/go-git/go-billy/v6 v6.0.0-beta.1/go.mod h1:QGOWN4CzmtRfpFeCw5paG3RJyKdTwsfGASkxBVkIaAU=
 github.com/go-git/go-git-fixtures/v6 v6.0.0-alpha.1 h1:gmqi2jvsreu0s8JMLylYDFq4sbjHwwlhktMw0DUg3mA=
 github.com/go-git/go-git-fixtures/v6 v6.0.0-alpha.1/go.mod h1:ECf1MqJlBdYpKggBrOXjo/0EnvRZx6D++I86UYjPgAQ=
-github.com/go-git/go-git/v6 v6.0.0-alpha.5 h1:sE+OlkHgYWNMVmN1s9sR7uyFgsWLtxcNWse/vBYKxRE=
-github.com/go-git/go-git/v6 v6.0.0-alpha.5/go.mod h1:3IjhiZnM+uBmUrOGSeqrJpsmi4Vd0H2NZO/uK2a7d0s=
+github.com/go-git/go-git/v6 v6.0.0-beta.1 h1:1t+vJYGDBN6f9GRWskgWx5UjXPFUa7wfffZZZ2C5GtA=
+github.com/go-git/go-git/v6 v6.0.0-beta.1/go.mod h1:ugDlr38Wwc+fOw85J+Oluh5TNXQtJgYMcriOljg3l4s=
 github.com/go-viper/mapstructure/v2 v2.5.0 h1:vM5IJoUAy3d7zRSVtIwQgBj7BiWtMPfmPEgAXnvj1Ro=
 github.com/go-viper/mapstructure/v2 v2.5.0/go.mod h1:oJDH3BJKyqBA2TXFhDsKDGDTlndYOZ6rGS0BRZIxGhM=
 github.com/golangci/golangci-lint/v2 v2.14.0 h1:ot8QffRa4LzAAEgtvNYrVs9esxQ7xoTwoAv6uhp4ngA=
