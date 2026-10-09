@@ -1,11 +1,11 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20261008184648-7027a25ab231
+# github.com/MarkRosemaker/ghrepo v0.0.0-20261009040152-d7714a702e36
 ## explicit; go 1.26.0
 github.com/MarkRosemaker/ghrepo
 # github.com/Masterminds/semver/v3 v3.5.0
 ## explicit; go 1.21
 github.com/Masterminds/semver/v3
-# github.com/Microsoft/go-winio v0.6.2
-## explicit; go 1.21
+# github.com/Microsoft/go-winio v0.6.3
+## explicit; go 1.26.0
 github.com/Microsoft/go-winio
 github.com/Microsoft/go-winio/internal/fs
 github.com/Microsoft/go-winio/internal/socket

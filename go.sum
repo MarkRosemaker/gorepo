@@ -1,9 +1,9 @@
-github.com/MarkRosemaker/ghrepo v0.0.0-20261008184648-7027a25ab231 h1:kcG/gZ+H8OEB1RmDN3JnD5YEN6Ztki11PBwm3Tlgbf4=
-github.com/MarkRosemaker/ghrepo v0.0.0-20261008184648-7027a25ab231/go.mod h1:auLKAFMM0UqmQBhH98epcBhgL25+fpDAErBh10BKcAI=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261009040152-d7714a702e36 h1:kOF0SZorWtIuBRNPT3miIVsudU/nQu8J2f+CTKBXWGI=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261009040152-d7714a702e36/go.mod h1:a7i6ZKDLSsgFgfyGW6jxYDd8UK1Dsw5ak7uvuX6yrY0=
 github.com/Masterminds/semver/v3 v3.5.0 h1:kQceYJfbupGfZOKZQg0kou0DgAKhzDg2NZPAwZ/2OOE=
 github.com/Masterminds/semver/v3 v3.5.0/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
-github.com/Microsoft/go-winio v0.6.2 h1:F2VQgta7ecxGYO8k3ZZz3RS8fVIXVxONVUPlNERoyfY=
-github.com/Microsoft/go-winio v0.6.2/go.mod h1:yd8OoFMLzJbo9gZq8j5qaps8bJ9aShtEA8Ipt1oGCvU=
+github.com/Microsoft/go-winio v0.6.3 h1:M/52tsoyTfwaxajLnXZm7PqkbMGRH8iSWP+8fcg9MQ4=
+github.com/Microsoft/go-winio v0.6.3/go.mod h1:ma0QpxizD4fyyzJ1C7MIblymTD2Nxz5Mho/3CepwIZg=
 github.com/ProtonMail/go-crypto v1.5.2 h1:cucYnvqcY7UOXVD//mSyjeaPY0SSN3v5cDkYPxumINk=
 github.com/ProtonMail/go-crypto v1.5.2/go.mod h1:/RaSu30DaKO4RY+XdV/ACcCcZkGr7AhUIduq5sjzzCo=
 github.com/anmitsu/go-shlex v0.0.0-20200514113438-38f4b401e2be h1:9AeTilPcZAjCFIImctFaOjnTIavg87rW78vTPkQqLI8=
