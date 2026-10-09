@@ -3,7 +3,7 @@ module github.com/MarkRosemaker/gorepo
 go 1.26.0
 
 require (
-	github.com/MarkRosemaker/ghrepo v0.0.0-20261009160623-0875cbbc9a4f
+	github.com/MarkRosemaker/ghrepo v0.0.0-20261009163308-fd4d317bcfd8
 	github.com/go-viper/mapstructure/v2 v2.5.0
 	github.com/golangci/golangci-lint/v2 v2.14.0
 	github.com/google/go-github/v80 v80.0.0
