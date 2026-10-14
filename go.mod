@@ -3,7 +3,7 @@ module github.com/MarkRosemaker/gorepo
 go 1.26.0
 
 require (
-	github.com/MarkRosemaker/ghrepo v0.0.0-20261011100143-1c83aa546e8b
+	github.com/MarkRosemaker/ghrepo v0.0.0-20261014040200-ec264debd6fe
 	github.com/go-viper/mapstructure/v2 v2.5.0
 	github.com/golangci/golangci-lint/v2 v2.14.0
 	github.com/google/go-github/v80 v80.0.0
@@ -15,7 +15,7 @@ require (
 
 require (
 	github.com/Masterminds/semver/v3 v3.5.0 // indirect
-	github.com/Microsoft/go-winio v0.6.3 // indirect
+	github.com/Microsoft/go-winio v0.6.4 // indirect
 	github.com/ProtonMail/go-crypto v1.5.2 // indirect
 	github.com/cloudflare/circl v1.6.5 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
