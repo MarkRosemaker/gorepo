@@ -1,17 +1,17 @@
 module github.com/MarkRosemaker/gorepo
 
-go 1.26.0
+go 1.27.0
 
 require (
 	github.com/MarkRosemaker/ghrepo v0.0.0-20261109120548-f12d3708db80
-	github.com/go-viper/mapstructure/v2 v2.5.0
+	github.com/MarkRosemaker/golangci-json v0.0.0-20261109135008-6879cd61cff7
 	github.com/golangci/golangci-lint/v2 v2.15.0
 	github.com/google/go-github/v80 v80.0.0
 	github.com/spf13/afero v1.15.0
+	github.com/spf13/viper v1.21.0
 	golang.org/x/mod v0.42.0
 	golang.org/x/oauth2 v0.38.0
 	golang.org/x/sync v0.25.0
-	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
@@ -25,6 +25,7 @@ require (
 	github.com/go-git/gcfg/v2 v2.0.2 // indirect
 	github.com/go-git/go-billy/v6 v6.0.0-beta.1 // indirect
 	github.com/go-git/go-git/v6 v6.0.0-beta.1 // indirect
+	github.com/go-viper/mapstructure/v2 v2.5.0 // indirect
 	github.com/google/go-querystring v1.2.0 // indirect
 	github.com/hashicorp/go-version v1.9.0 // indirect
 	github.com/kevinburke/ssh_config v1.6.0 // indirect
@@ -39,7 +40,6 @@ require (
 	github.com/sirupsen/logrus v1.10.2 // indirect
 	github.com/spf13/cast v1.10.0 // indirect
 	github.com/spf13/pflag v1.1.0 // indirect
-	github.com/spf13/viper v1.21.0 // indirect
 	github.com/stretchr/objx v0.8.0 // indirect
 	github.com/stretchr/testify v1.12.1 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
