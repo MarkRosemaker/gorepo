@@ -1,4 +1,4 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20261109120548-f12d3708db80
+# github.com/MarkRosemaker/ghrepo v0.0.0-20261109134431-c69b68fdab4f
 ## explicit; go 1.26.0
 github.com/MarkRosemaker/ghrepo
 # github.com/MarkRosemaker/golangci-json v0.0.0-20261109135008-6879cd61cff7
