@@ -1,7 +1,7 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20261109134431-c69b68fdab4f
+# github.com/MarkRosemaker/ghrepo v0.0.0-20261109161618-d02f09d307b5
 ## explicit; go 1.26.0
 github.com/MarkRosemaker/ghrepo
-# github.com/MarkRosemaker/golangci-json v0.0.0-20261109135008-6879cd61cff7
+# github.com/MarkRosemaker/golangci-json v0.0.0-20261109161145-4f1bd2b25a7a
 ## explicit; go 1.27.0
 github.com/MarkRosemaker/golangci-json
 # github.com/Masterminds/semver/v3 v3.5.0
