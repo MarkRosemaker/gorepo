@@ -15,6 +15,7 @@ func TestLintersYAMLMarshal(t *testing.T) {
 		Linters: config.Linters{
 			Default: config.GroupNone,
 			Enable:  []string{"usetesting"},
+			Disable: []string{},
 			Settings: config.LintersSettings{
 				UseTesting: config.UseTestingSettings{
 					OSCreateTemp:      true,
@@ -47,6 +48,13 @@ func TestLintersYAMLMarshal(t *testing.T) {
 	} {
 		if !strings.Contains(got, want) {
 			t.Errorf("missing key/value %q in:\n%s", want, got)
+		}
+	}
+
+	// zero values stay out, or they would override golangci-lint's defaults
+	for _, unwanted := range []string{": false", ": []", ": \"\"", "InternalTest", "issues:", "formatters:"} {
+		if strings.Contains(got, unwanted) {
+			t.Errorf("unexpected %q in:\n%s", unwanted, got)
 		}
 	}
 }

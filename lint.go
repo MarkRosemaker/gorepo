@@ -5,6 +5,7 @@ import (
 	"errors"
 	"io"
 	"os"
+	"reflect"
 
 	"github.com/MarkRosemaker/ghrepo"
 	"github.com/go-viper/mapstructure/v2"
@@ -20,6 +21,7 @@ func (r Repository) GolangCILintFix(ctx context.Context) error {
 	return r.golangCILint(ctx, true, nil)
 }
 
+// GolangCILintWithLinters runs golangci-lint with these linters only; zero-valued settings keep golangci-lint's defaults.
 func (r Repository) GolangCILintWithLinters(ctx context.Context, fix bool, settings config.Linters) error {
 	return r.golangCILint(ctx, fix, &settings)
 }
@@ -67,7 +69,7 @@ func marshalYAML(w io.Writer, cfg *config.Config) error {
 		return err
 	}
 
-	if err := yaml.NewEncoder(w).Encode(m); err != nil {
+	if err := yaml.NewEncoder(w).Encode(dropZero(m)); err != nil {
 		return err
 	}
 
@@ -90,4 +92,30 @@ func structToMap(v any) (map[string]any, error) {
 	}
 
 	return m, nil
+}
+
+// dropZero removes zero values, which would otherwise override golangci-lint's own defaults.
+func dropZero(v any) any {
+	if m, ok := v.(map[string]any); ok {
+		for k, e := range m {
+			if e = dropZero(e); e == nil {
+				delete(m, k)
+			} else {
+				m[k] = e
+			}
+		}
+
+		if len(m) == 0 {
+			return nil
+		}
+
+		return m
+	}
+
+	rv := reflect.ValueOf(v)
+	if !rv.IsValid() || rv.IsZero() || (rv.Kind() == reflect.Slice || rv.Kind() == reflect.Map) && rv.Len() == 0 {
+		return nil
+	}
+
+	return v
 }
