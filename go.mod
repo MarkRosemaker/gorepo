@@ -3,7 +3,7 @@ module github.com/MarkRosemaker/gorepo
 go 1.27.0
 
 require (
-	github.com/MarkRosemaker/ghrepo v0.0.0-20261109170232-1ffd8be2c5e2
+	github.com/MarkRosemaker/ghrepo v0.0.0-20261111155235-6292abd5e761
 	github.com/MarkRosemaker/golangci-json v0.0.0-20261109170355-1ad201ecdb14
 	github.com/golangci/golangci-lint/v2 v2.15.0
 	github.com/google/go-github/v80 v80.0.0
@@ -44,7 +44,7 @@ require (
 	github.com/stretchr/testify v1.12.1 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.6 // indirect
-	golang.org/x/crypto v0.58.0 // indirect
+	golang.org/x/crypto v0.59.0 // indirect
 	golang.org/x/net v0.62.0 // indirect
 	golang.org/x/sys v0.50.0 // indirect
 	golang.org/x/text v0.44.0 // indirect
