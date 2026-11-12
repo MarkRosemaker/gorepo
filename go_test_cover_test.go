@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"errors"
 	"io/fs"
+	"os"
+	"path/filepath"
 	"strings"
 	"testing"
 
@@ -132,6 +134,34 @@ func TestFailures(t *testing.T) {
 
 	if got := failures(out); got != want {
 		t.Errorf("failures =\n%s\nwant\n%s", got, want)
+	}
+}
+
+// A build broken in one package, as worldweaver's was, fails the sixty-seven
+// that import it: the compiler's error stays, and their lines collapse to one.
+func TestFailuresCollapseWhatABrokenPackageFailed(t *testing.T) {
+	out, err := os.ReadFile(filepath.Join("testdata", "worldweaver-build-failure.txt"))
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	want := "# github.com/MarkRosemaker/worldweaver/internal/studio\n" +
+		"internal/studio/studio.go:199:73: cannot use p.Animation (variable of string type atelier.Animation) " +
+		"as string value in struct literal\n" +
+		"FAIL: 67 packages [build failed]"
+
+	if got := failures(string(out) + "FAIL\n"); got != want+"\nFAIL" {
+		t.Errorf("failures =\n%s\nwant\n%s\nFAIL", got, want)
+	}
+}
+
+// Without the compiler's word on which package broke, the lines that name the
+// packages are all there is, so they stay.
+func TestFailuresKeepUnexplainedBuildFailures(t *testing.T) {
+	out := "FAIL\texample.com/m/a [setup failed]\nFAIL\texample.com/m/b [build failed]"
+
+	if got := failures(out); got != out {
+		t.Errorf("failures =\n%s\nwant it unchanged", got)
 	}
 }
 
