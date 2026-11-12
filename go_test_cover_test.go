@@ -83,6 +83,58 @@ func TestGoTestCover(t *testing.T) {
 	})
 }
 
+// A failure keeps what failed and drops what passed.
+func TestGoTestCoverReportsOnlyFailures(t *testing.T) {
+	repo := newTestRepo(t)
+
+	writeFiles(t, repo, map[string]string{
+		"go.mod":        goMod,
+		"ok/ok_test.go": "package ok\n\nimport \"testing\"\n\nfunc TestFine(t *testing.T) {}\n",
+		"bad/bad_test.go": "package bad\n\nimport \"testing\"\n\n" +
+			"func TestFine(t *testing.T) {}\n\nfunc TestBroken(t *testing.T) { t.Fatal(\"boom\") }\n",
+	})
+
+	_, err := repo.GoTestCover(t.Context())
+	if err == nil {
+		t.Fatal("a failing test passed")
+	}
+
+	msg := err.Error()
+	for _, want := range []string{"--- FAIL: TestBroken", "boom", "FAIL\texample.com/test/bad", "-test.shuffle "} {
+		if !strings.Contains(msg, want) {
+			t.Errorf("the failure lacks %q:\n%s", want, msg)
+		}
+	}
+
+	for _, unwanted := range []string{"ok  \texample.com/test/ok", "coverage: "} {
+		if strings.Contains(msg, unwanted) {
+			t.Errorf("the failure keeps %q:\n%s", unwanted, msg)
+		}
+	}
+}
+
+func TestFailures(t *testing.T) {
+	out := "ok  \texample.com/gt/a\t1.012s\tcoverage: 0.0% of statements in ./...\n" +
+		"?   \texample.com/gt/d\t[no test files]\n" +
+		"\texample.com/gt/c\t\tcoverage: 0.0% of statements\n" +
+		"-test.shuffle 1794492933930643719\n" +
+		"--- FAIL: TestBad (0.00s)\n" +
+		"    b_test.go:4: boom\n" +
+		"FAIL\n" +
+		"coverage: 0.0% of statements in ./...\n" +
+		"FAIL\texample.com/gt/b\t0.011s\n"
+
+	want := "-test.shuffle 1794492933930643719\n" +
+		"--- FAIL: TestBad (0.00s)\n" +
+		"    b_test.go:4: boom\n" +
+		"FAIL\n" +
+		"FAIL\texample.com/gt/b\t0.011s"
+
+	if got := failures(out); got != want {
+		t.Errorf("failures =\n%s\nwant\n%s", got, want)
+	}
+}
+
 func TestGetTotalLine(t *testing.T) {
 	tests := []struct {
 		name    string
