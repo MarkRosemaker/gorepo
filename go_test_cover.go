@@ -29,8 +29,8 @@ func (r *Repository) GoTestCover(ctx context.Context) (float64, error) {
 	); err != nil {
 		const noTestPackagesMsg = "go: warning: \"./...\" matched no packages\nno packages to test"
 
-		execErr := ghrepo.ExecError{}
-		if !errors.As(err, &execErr) {
+		execErr, ok := errors.AsType[ghrepo.ExecError](err)
+		if !ok {
 			return 0, err
 		}
 
