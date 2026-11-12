@@ -1,5 +1,5 @@
-github.com/MarkRosemaker/ghrepo v0.0.0-20261112181351-bd57475b9126 h1:Fjf9vpVXac6wRFcYfiZnTCq6CtJqDgsTkDgnlbtH3Vw=
-github.com/MarkRosemaker/ghrepo v0.0.0-20261112181351-bd57475b9126/go.mod h1:YexUtwO0vIrrPWOwOaFAkmtyqKbQkY8mAw4TS6JwPtw=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261112230941-1de300994866 h1:SHwKN/Qi7+LyHUvRDZcXjJBiPAnD3h6POi/3lR0gN1k=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261112230941-1de300994866/go.mod h1:YexUtwO0vIrrPWOwOaFAkmtyqKbQkY8mAw4TS6JwPtw=
 github.com/MarkRosemaker/golangci-json v0.0.0-20261109170355-1ad201ecdb14 h1:v/JhGtxBYh9sRa4udM460ILJqX9qm/v/jyL7xz4vku8=
 github.com/MarkRosemaker/golangci-json v0.0.0-20261109170355-1ad201ecdb14/go.mod h1:GQvMvU3tgHtWgTDgLzCCt6UW2PTMvnNtEG0QxgLyBuA=
 github.com/Masterminds/semver/v3 v3.5.0 h1:kQceYJfbupGfZOKZQg0kou0DgAKhzDg2NZPAwZ/2OOE=
