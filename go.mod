@@ -3,8 +3,8 @@ module github.com/MarkRosemaker/gorepo
 go 1.27.0
 
 require (
-	github.com/MarkRosemaker/ghrepo v0.0.0-20261113050240-138f33119e12
-	github.com/MarkRosemaker/golangci-json v0.0.0-20261114003023-9bb434c46e2a
+	github.com/MarkRosemaker/ghrepo v0.0.0-20261114134822-8e92538285ef
+	github.com/MarkRosemaker/golangci-json v0.0.0-20261114134856-5a4e79951c5e
 	github.com/golangci/golangci-lint/v2 v2.15.0
 	github.com/google/go-github/v80 v80.0.0
 	github.com/spf13/afero v1.15.0
