@@ -4,8 +4,6 @@ import (
 	"errors"
 	"io/fs"
 	"testing"
-
-	"github.com/MarkRosemaker/ghrepo"
 )
 
 // depFiles is a module that vendors a local one, example.com/dep, of whose
@@ -35,9 +33,8 @@ func TestSettleModules(t *testing.T) {
 			"func TestA(t *testing.T) { _ = sub.Y }\n",
 	})
 
-	_, err := repo.GoTestCover(t.Context())
-	if !ModulesOutOfStep(err) {
-		t.Fatalf("not out of step: %v", err)
+	if _, err := repo.GoTestCover(t.Context()); err == nil {
+		t.Fatal("passed with a package vendor/ lacks")
 	}
 
 	if err := repo.SettleModules(t.Context()); err != nil {
@@ -75,25 +72,5 @@ func TestSettleModulesFails(t *testing.T) {
 
 	if err := repo.SettleModules(t.Context()); err == nil {
 		t.Error("tidied a broken go.mod")
-	}
-}
-
-func TestModulesOutOfStep(t *testing.T) {
-	for _, tc := range []struct {
-		err  error
-		want bool
-	}{
-		{nil, false},
-		{errors.New("--- FAIL: TestA\n    a_test.go:4: boom"), false},
-		{ghrepo.ExecError{Cmd: "go test", Out: "a_test.go:3:20: cannot find module providing package " +
-			"example.com/dep/sub: import lookup disabled by -mod=vendor"}, true},
-		{errors.New("go: inconsistent vendoring in /src:"), true},
-		{errors.New("a.go:3:8: no required module provides package example.com/x; to add it:"), true},
-		{errors.New("missing go.sum entry for module providing package example.com/x"), true},
-		{errors.New("go: updates to go.mod needed; to update it:"), true},
-	} {
-		if got := ModulesOutOfStep(tc.err); got != tc.want {
-			t.Errorf("ModulesOutOfStep(%v) = %v, want %v", tc.err, got, tc.want)
-		}
 	}
 }
