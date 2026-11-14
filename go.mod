@@ -4,7 +4,7 @@ go 1.27.0
 
 require (
 	github.com/MarkRosemaker/ghrepo v0.0.0-20261113050240-138f33119e12
-	github.com/MarkRosemaker/golangci-json v0.0.0-20261109170355-1ad201ecdb14
+	github.com/MarkRosemaker/golangci-json v0.0.0-20261114003023-9bb434c46e2a
 	github.com/golangci/golangci-lint/v2 v2.15.0
 	github.com/google/go-github/v80 v80.0.0
 	github.com/spf13/afero v1.15.0
