@@ -1,7 +1,7 @@
-github.com/MarkRosemaker/ghrepo v0.0.0-20261114134822-8e92538285ef h1:wVsOQ9QSrgzS1VXHt/aaGiC2W5rkF+N5yWwWfdpUHlc=
-github.com/MarkRosemaker/ghrepo v0.0.0-20261114134822-8e92538285ef/go.mod h1:YexUtwO0vIrrPWOwOaFAkmtyqKbQkY8mAw4TS6JwPtw=
-github.com/MarkRosemaker/golangci-json v0.0.0-20261114134856-5a4e79951c5e h1:8B0BVLY+sWUtiHrvGYa+x058mWjfr7V76pR1yxMD6Fg=
-github.com/MarkRosemaker/golangci-json v0.0.0-20261114134856-5a4e79951c5e/go.mod h1:GQvMvU3tgHtWgTDgLzCCt6UW2PTMvnNtEG0QxgLyBuA=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261115155452-da53b1ea84fc h1:y5UrnoNvAP6gcidL+YGqMr9aOOnt3srWnrDIoS9A1vA=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261115155452-da53b1ea84fc/go.mod h1:YexUtwO0vIrrPWOwOaFAkmtyqKbQkY8mAw4TS6JwPtw=
+github.com/MarkRosemaker/golangci-json v0.0.0-20261115155527-f5cf3790d857 h1:toe7svTg+6gh1TPS/ieP+RyJIt4hLxZXnJOkvFjKhKA=
+github.com/MarkRosemaker/golangci-json v0.0.0-20261115155527-f5cf3790d857/go.mod h1:GQvMvU3tgHtWgTDgLzCCt6UW2PTMvnNtEG0QxgLyBuA=
 github.com/Masterminds/semver/v3 v3.5.0 h1:kQceYJfbupGfZOKZQg0kou0DgAKhzDg2NZPAwZ/2OOE=
 github.com/Masterminds/semver/v3 v3.5.0/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
 github.com/Microsoft/go-winio v0.6.4 h1:kJF2pamtYCWXf0xAT8sAkwKC0pMl2HYBrRPHAqyUc+g=
