@@ -3,8 +3,8 @@ module github.com/MarkRosemaker/gorepo
 go 1.27.0
 
 require (
-	github.com/MarkRosemaker/ghrepo v0.0.0-20261117110327-6027e4176330
-	github.com/MarkRosemaker/golangci-json v0.0.0-20261115155527-f5cf3790d857
+	github.com/MarkRosemaker/ghrepo v0.0.0-20261117230306-8d07c3552cdc
+	github.com/MarkRosemaker/golangci-json v0.0.0-20261117230253-e20c72e41a7e
 	github.com/golangci/golangci-lint/v2 v2.15.0
 	github.com/google/go-github/v80 v80.0.0
 	github.com/spf13/afero v1.15.0
@@ -45,7 +45,7 @@ require (
 	github.com/subosito/gotenv v1.6.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.6 // indirect
 	golang.org/x/crypto v0.59.0 // indirect
-	golang.org/x/net v0.62.0 // indirect
+	golang.org/x/net v0.63.0 // indirect
 	golang.org/x/sys v0.50.0 // indirect
 	golang.org/x/text v0.44.0 // indirect
 )
