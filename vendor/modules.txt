@@ -1,4 +1,4 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20261116230157-598d73ad7adf
+# github.com/MarkRosemaker/ghrepo v0.0.0-20261117110327-6027e4176330
 ## explicit; go 1.26.0
 github.com/MarkRosemaker/ghrepo
 # github.com/MarkRosemaker/golangci-json v0.0.0-20261115155527-f5cf3790d857
@@ -219,7 +219,7 @@ github.com/pjbgf/sha1cd/ubc
 ## explicit; go 1.23.0
 github.com/sagikazarmark/locafero
 github.com/sagikazarmark/locafero/internal/queue
-# github.com/sergi/go-diff v1.4.4
+# github.com/sergi/go-diff v1.4.5
 ## explicit; go 1.13
 github.com/sergi/go-diff/diffmatchpatch
 # github.com/sirupsen/logrus v1.10.2
