@@ -1,4 +1,4 @@
-# github.com/MarkRosemaker/ghrepo v0.0.0-20261117230306-8d07c3552cdc
+# github.com/MarkRosemaker/ghrepo v0.0.0-20261118133230-d09ab5885ef9
 ## explicit; go 1.26.0
 github.com/MarkRosemaker/ghrepo
 # github.com/MarkRosemaker/golangci-json v0.0.0-20261117230253-e20c72e41a7e
@@ -89,7 +89,7 @@ github.com/fatih/color
 ## explicit; go 1.23
 github.com/fsnotify/fsnotify
 github.com/fsnotify/fsnotify/internal
-# github.com/go-git/gcfg/v2 v2.0.2
+# github.com/go-git/gcfg/v2 v2.0.3
 ## explicit; go 1.21
 github.com/go-git/gcfg/v2
 github.com/go-git/gcfg/v2/scanner

@@ -1,5 +1,5 @@
-github.com/MarkRosemaker/ghrepo v0.0.0-20261117230306-8d07c3552cdc h1:NdhG1CbW59iwokX7RrCCWHS0XuJzqCy3JjHhEf//B3U=
-github.com/MarkRosemaker/ghrepo v0.0.0-20261117230306-8d07c3552cdc/go.mod h1:V9Oc4toWN29VkZxu6Q/GT4TGO9iVeyOxTgcRSLrI1kM=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261118133230-d09ab5885ef9 h1:zwuiaGu97b85Y+p/kaEhKte7mzgwRtTedAIx0xkXiHA=
+github.com/MarkRosemaker/ghrepo v0.0.0-20261118133230-d09ab5885ef9/go.mod h1:fMd61Sw3FDmmqBHM8yn1716sp/quDJkymWyBW3t3unA=
 github.com/MarkRosemaker/golangci-json v0.0.0-20261117230253-e20c72e41a7e h1:4kV4mVH9pH9hs2zL1GJhxqieIbr2zv3tDpW1LPWLyZ4=
 github.com/MarkRosemaker/golangci-json v0.0.0-20261117230253-e20c72e41a7e/go.mod h1:GQvMvU3tgHtWgTDgLzCCt6UW2PTMvnNtEG0QxgLyBuA=
 github.com/Masterminds/semver/v3 v3.5.0 h1:kQceYJfbupGfZOKZQg0kou0DgAKhzDg2NZPAwZ/2OOE=
@@ -26,8 +26,8 @@ github.com/fsnotify/fsnotify v1.10.1 h1:b0/UzAf9yR5rhf3RPm9gf3ehBPpf0oZKIjtpKrx5
 github.com/fsnotify/fsnotify v1.10.1/go.mod h1:TLheqan6HD6GBK6PrDWyDPBaEV8LspOxvPSjC+bVfgo=
 github.com/gliderlabs/ssh v0.3.8 h1:a4YXD1V7xMF9g5nTkdfnja3Sxy1PVDCj1Zg4Wb8vY6c=
 github.com/gliderlabs/ssh v0.3.8/go.mod h1:xYoytBv1sV0aL3CavoDuJIQNURXkkfPA/wxQ1pL1fAU=
-github.com/go-git/gcfg/v2 v2.0.2 h1:MY5SIIfTGGEMhdA7d7JePuVVxtKL7Hp+ApGDJAJ7dpo=
-github.com/go-git/gcfg/v2 v2.0.2/go.mod h1:/lv2NsxvhepuMrldsFilrgct6pxzpGdSRC13ydTLSLs=
+github.com/go-git/gcfg/v2 v2.0.3 h1:1JJuq344l9ATEFu7/rhdBOLiTw5vnn+q8YBxGLDX8Kw=
+github.com/go-git/gcfg/v2 v2.0.3/go.mod h1:/lv2NsxvhepuMrldsFilrgct6pxzpGdSRC13ydTLSLs=
 github.com/go-git/go-billy/v6 v6.0.0-beta.1 h1:OJ4r207zcEbeq/DJNajQUOMd+pph3r9A7hRq1Sjl1bA=
 github.com/go-git/go-billy/v6 v6.0.0-beta.1/go.mod h1:QGOWN4CzmtRfpFeCw5paG3RJyKdTwsfGASkxBVkIaAU=
 github.com/go-git/go-git-fixtures/v6 v6.0.0-alpha.1 h1:gmqi2jvsreu0s8JMLylYDFq4sbjHwwlhktMw0DUg3mA=
