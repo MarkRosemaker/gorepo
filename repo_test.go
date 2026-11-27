@@ -196,12 +196,14 @@ func TestGoModVendor(t *testing.T) {
 // lib v1.0.0 is required, v1.1.0 is the latest.
 const requiresOldLib = goMod + "\nrequire example.com/lib v1.0.0\n"
 
+// A module only the tests import is updated too, or it falls behind the modules the code imports.
 func TestUpdateDependencies(t *testing.T) {
 	repo := newTestRepo(t)
 	libProxy(t, "v1.0.0", "v1.1.0")
 	writeFiles(t, repo, map[string]string{
-		"go.mod":  requiresOldLib,
-		"main.go": "package main\n\nimport \"example.com/lib\"\n\nfunc main() { _ = lib.F() }\n",
+		"go.mod":       requiresOldLib,
+		"main.go":      "package main\n\nfunc main() {}\n",
+		"main_test.go": "package main\n\nimport (\n\t\"testing\"\n\n\t\"example.com/lib\"\n)\n\nfunc TestF(t *testing.T) { _ = lib.F() }\n",
 	})
 
 	if err := repo.UpdateDependencies(t.Context()); err != nil {
